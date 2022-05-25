@@ -1,12 +1,10 @@
 @extends('layouts.front')
-
 @section('title')
     E-Ticaret
 @endsection
 
 @section('content')
     @include('layouts.inc.slider')
-
     <div class="py-5">
         <div class="container">
             <div class="row">
@@ -14,14 +12,17 @@
                 <div class="owl-carousel featured-carousel owl-theme">
                     @foreach ($featured_products as $prod)
                         <div class="item">
+
+                            <a href="{{ url('category/'.$prod->category->slug.'/'.$prod->slug) }}">
                             <div class="card">
-                                <img src="{{ asset('assets/uploads/products/'.$prod->image) }}" alt="Product image">
+                                <img src="{{ asset('assets/uploads/products/'.$prod->image) }}" alt="Ürün Resimi">
                                 <div class="card-body">
                                     <h5>{{  $prod->name }}</h5>
-                                    <span class="float-start">{{   $prod->selling_price }}</span>
-                                    <span class="float-end"> <s> {{   $prod->original_price }}</s></span>
+                                    <span class="float-start">{{   $prod->original_price }}</span>
+                                    <span class="float-end"> <s> {{   $prod->selling_price }}</s></span>
                                 </div>
                             </div>
+                            </a>
                         </div>
                     @endforeach
                 </div>
@@ -37,10 +38,11 @@
                 <h2>Trend Kategoriler</h2>
                 <div class="owl-carousel featured-carousel owl-theme">
                     @foreach ($trending_category as $tcategory)
+
                         <div class="item">
-                            <a href="{{ url('view-category/'.$tcategory->slug) }}">
+                            <a href="{{ url('category/'.$tcategory->slug) }}">
                             <div class="card">
-                                <img src="{{ asset('assets/uploads/category/'.$tcategory->image) }}" alt="Category image">
+                                <img src="{{ asset('assets/uploads/category/'.$tcategory->image) }}" alt="Kategori Resimileri">
                                 <div class="card-body">
                                     <h5>{{  $tcategory->name }}</h5>
                                     <p>

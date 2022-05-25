@@ -7,10 +7,13 @@
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav ms-auto">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">AnaSayfa</a>
+            <a class="nav-link active" aria-current="page" href="{{ url('/') }}">AnaSayfa <i class="fa fa-home"></i></a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ url('category') }}">Kategorilar</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ url('cart') }}">Sepet <i class="fa fa-shopping-cart"></i></a>
           </li>
           @guest
           @if (Route::has('login'))
@@ -30,11 +33,12 @@
                     {{ Auth::user()->name }}
                 </a>
                 <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                    <li>
-                        <a class="dropdown-item" href="#">
-                            Profilim
-                        </a>
-                    </li>
+                <li>
+                    <a class="dropdown-item" href="{{ url('my-order') }}">
+                        Siparişlerim
+                    </a>
+                </li>
+
                     <li>
                         <a class="dropdown-item" href="{{ route('logout') }}"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >
                             {{ __('Çıkış Yap') }}

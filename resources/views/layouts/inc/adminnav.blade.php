@@ -38,11 +38,11 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-                  <a class="dropdown-item" href="#">Mike John responded to your email</a>
-                  <a class="dropdown-item" href="#">You have 5 new tasks</a>
-                  <a class="dropdown-item" href="#">You're now friend with Andrew</a>
-                  <a class="dropdown-item" href="#">Another Notification</a>
-                  <a class="dropdown-item" href="#">Another One</a>
+                  <a class="dropdown-item" href="#">test</a>
+                  <a class="dropdown-item" href="#">test</a>
+                  <a class="dropdown-item" href="#">test</a>
+                  <a class="dropdown-item" href="#">test</a>
+                  <a class="dropdown-item" href="#">test</a>
                 </div>
               </li>
               <li class="nav-item dropdown">
@@ -53,8 +53,7 @@
                   </p>
                 </a>
                 <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownProfile">
-                  <a class="dropdown-item" href="#">Profilim</a>
-                  <a class="dropdown-item" href="#">Ayarlar</a>
+                  <a class="dropdown-item" href="{{ url('/')}}">Ana Sayafa</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="{{ route('logout') }}"  onclick="event.preventDefault(); document.getElementById('logout-form').submit();" >
                             {{ __('Çıkış Yap') }}

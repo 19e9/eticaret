@@ -10,16 +10,16 @@
                 @csrf
                 <div class="row">
                     <div class="col-md-6">
-                        <label for="">Ürün Adı</label>
-                        <input type="text" class="form-control" name="name">
+                        <label for="">Kategori Adı</label>
+                        <input type="text" class="form-control" name="name" required>
                     </div>
                     <div class="col-md-6">
-                        <label for="">Ürün Türü</label>
-                        <input type="text" class="form-control" name="slug">
+                        <label for="">Link Adı</label>
+                        <input type="text" class="form-control" name="slug" required>
                     </div>
                     <div class="col-md-12 mb-3">
-                        <label for="">Ürün Hakkında</label>
-                        <textarea name="description" rows="3" class="form-control"></textarea>
+                        <label for="">Kategori Hakkında</label>
+                        <textarea name="description"  required rows="3" class="form-control"></textarea>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Durum</label>
@@ -31,18 +31,18 @@
                     </div>
                     <div class="col-md-12 mb-3">
                         <label for="">Meta Başlık</label>
-                        <input type="text" class="form-control" name="meta_title">
+                        <input type="text" class="form-control" name="meta_title" required>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label for="">Meta Anahtar Kelimeler</label>
-                        <textarea name="meta_keywords" rows="3" class="form-control"></textarea>
+                        <textarea name="meta_keywords" required rows="3" class="form-control"></textarea>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label for="">Meta Açıklama</label>
-                        <textarea name="meta_description" rows="3" class="form-control"></textarea>
+                        <textarea name="meta_description" required rows="3" class="form-control"></textarea>
                     </div>
                     <div class="col-md-12">
-                        <input type="file" name="image" class="form-control">
+                        <input type="file" name="image" required class="form-control">
                     </div>
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-primary">Ekle</button>

@@ -17,35 +17,35 @@
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Ürün Adı</label>
-                        <input type="text" class="form-control" value="{{ $products->name }}" name="name">
+                        <input type="text" class="form-control" value="{{ $products->name }}" name="name" required>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="">Ürün Kal</label>
-                        <input type="text" class="form-control" value="{{ $products->slug }}" name="slug">
+                        <label for="">Link Adı</label>
+                        <input type="text" class="form-control" value="{{ $products->slug }}" name="slug" required>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label for="">Küçük Açıklama</label>
-                        <textarea name="small_description" rows="3" class="form-control">{{ $products->small_description }}</textarea>
+                        <textarea name="small_description" required rows="3" class="form-control">{{ $products->small_description }}</textarea>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label for="">Ürün Hakkında</label>
-                        <textarea name="description" rows="3" class="form-control">{{ $products->description }}</textarea>
+                        <textarea name="description" required rows="3" class="form-control">{{ $products->description }}</textarea>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Orijinal Fiyat</label>
-                        <input type="number" value="{{ $products->original_price }}" class="form-control" name="original_price">
+                        <input type="number" value="{{ $products->original_price }}" class="form-control" name="original_price" required>
                     </div>
                     <div class="col-md-6 mb-3">
-                        <label for="">Satış Fiyat</label>
-                        <input type="number" value="{{ $products->selling_price }}" class="form-control" name="selling_price">
+                        <label for="">İndirim Fiyat</label>
+                        <input type="number" value="{{ $products->selling_price }}" class="form-control" name="selling_price" required>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Vergi</label>
-                        <input type="number" value="{{ $products->tax }}" class="form-control" name="tax">
+                        <input type="number" value="{{ $products->tax }}" class="form-control" name="tax" required>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Adet</label>
-                        <input type="number" value="{{ $products->qty }}" class="form-control" name="qty">
+                        <input type="number" value="{{ $products->qty }}" class="form-control" name="qty" required>
                     </div>
                     <div class="col-md-6 mb-3">
                         <label for="">Durum</label>
@@ -57,21 +57,21 @@
                     </div>
                     <div class="col-md-12 mb-3">
                         <label for="">Meta Başlık</label>
-                        <input type="text" value="{{ $products->meta_title }}" class="form-control" name="meta_title">
+                        <input type="text" value="{{ $products->meta_title }}" class="form-control" name="meta_title" required>
                     </div>
                     <div class="col-md-12 mb-3">
-                        <label for="">Meta Anahtar Kelimeler</label>
-                        <textarea name="meta_keywords" rows="3" class="form-control">{{ $products->meta_keywords }}</textarea>
+                        <label for="">Anahtar Kelimeler</label>
+                        <textarea name="meta_keywords" required rows="3" class="form-control">{{ $products->meta_keywords }}</textarea>
                     </div>
                     <div class="col-md-12 mb-3">
                         <label for="">Meta Açıklama</label>
-                        <textarea name="meta_description" rows="3" class="form-control">{{ $products->meta_description }}</textarea>
+                        <textarea name="meta_description" required rows="3" class="form-control">{{ $products->meta_description }}</textarea>
                     </div>
                     @if ($products->image)
-                        <img src="{{ asset('assets/uploads/products/'.$products->image) }}" alt="">
+                        <img src="{{ asset('assets/uploads/products/'.$products->image) }}" class="cate-image" alt="">
                     @endif
                     <div class="col-md-12">
-                        <input type="file" name="image" class="form-control">
+                        <input type="file" name="image" required class="form-control">
                     </div>
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-primary">Güncelle</button>

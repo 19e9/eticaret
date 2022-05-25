@@ -5,14 +5,16 @@ namespace App\Http\Controllers\Frontend;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
+use App\Models\Rating;
+use App\Models\Review;
 use Illuminate\Http\Request;
-
+use Illuminate\Support\Facades\Auth;
 
 class FrontendController extends Controller
 {
     public function index()
     {
-        $featured_products = Product::where('trending','1')->take(15)->get();
+        $featured_products = Product::with('category')->where('trending','1')->take(15)->get();
         $trending_category = Category::where('popular','1')->take(15)->get();
         return view('frontend.index', compact('featured_products','trending_category'));
     }
@@ -32,9 +34,10 @@ class FrontendController extends Controller
         }
         else
         {
-            return redirect('/')->with('status',"Bu slug bulunmadı");
+            return redirect('/')->with('status',"Bu link bulunmadı");
         }
     }
+
     public function productview($cate_slug, $prod_slug)
     {
         if(Category::where('slug',$cate_slug)->exists())
@@ -42,7 +45,19 @@ class FrontendController extends Controller
             if(Product::where('slug',$prod_slug)->exists())
             {
                 $products = Product::where('slug',$prod_slug)->first();
-                return view('frontend.products.view',compact('products'));
+                $ratings = Rating::where('prod_id', $products->id)->get();
+                $rating_sum = Rating::where('prod_id', $products->id)->sum('stars_rated');
+                $user_rating = Rating::where('prod_id', $products->id)->where('user_id',Auth::id())->first();
+                $reviews = Review::where('prod_id', $products->id)->get();
+
+                if($ratings->count() > 0)
+                {
+                    $rating_value = $rating_sum/$ratings->count();
+                }
+                else{
+                    $rating_value = 0;
+                }
+                return view('frontend.products.view',compact('products','ratings','reviews','rating_value','user_rating'));
             }
             else{
                 return redirect('/')->with('status',"Bu Link Kapandı");

@@ -4,7 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Frontend\FrontendController;
+use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\CheckoutController;
+use App\Http\Controllers\Frontend\RatingController;
+use App\Http\Controllers\Frontend\ReviewController;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Frontend\UserController;
 
 //use App\Http\Controllers\Frontend\FrontendController;
 
@@ -23,15 +28,42 @@ use Illuminate\Support\Facades\Auth;
 //      return view('welcome');
 //  });
 
+
 Route::get('/', [FrontendController::class,'index']);
 
 Route::get('category', [FrontendController::class, 'category']);
 
-Route::get('view-category/{slug}', [FrontendController::class, 'viewcategory']);
+Route::get('category/{slug}', [FrontendController::class, 'viewcategory']);
 
-Route::get('view-category/{cate_slug}/{prod_slug}',[FrontendController::class,'productview']);
+Route::get('category/{cate_slug}/{prod_slug}',[FrontendController::class, 'productview']);
 
 Auth::routes();
+
+Route::post('add-to-cart',[CartController::class,'addProduct']);
+
+Route::post('delete-cart-item',[CartController::class,'deleteproduct']);
+
+Route::post('update-cart',[CartController::class,'updatecart']);
+
+
+Route::middleware(['auth'])->group(function () {
+    Route::get('cart',[CartController::class,'viewcart']);
+    Route::get('checkout',[CheckoutController::class,'index']);
+    Route::post('place-order',[CheckoutController::class,'placeorder']);
+
+    Route::get('my-order',[UserController::class,'index']);
+    Route::get('view-order/{id}',[UserController::class,'view']);
+
+    Route::post('add-rating',[RatingController::class,'add']);
+
+    Route::get('add-review/{product_slug}/userreview',[ReviewController::class,'add']);
+
+    Route::post('add-review', [ReviewController::class,'create']);
+
+    Route::get('edit-review/{product_slug}/userreview',[ReviewController::class,'edit']);
+
+    Route::put('update-review',[ReviewController::class,'update']);
+});
 
 Route::get('/home', [App\Http\Controllers\HomeController::class,'index'])->name('home');
 

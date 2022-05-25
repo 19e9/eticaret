@@ -11,8 +11,8 @@
             <thead>
                 <tr>
                     <th>ID</th>
-                    <th>Ürün Adı</th>
-                    <th>Ürün Hakkında</th>
+                    <th>Kategori Adı</th>
+                    <th>Kategori Hakkında</th>
                     <th>Resim</th>
                     <th>İşlem</th>
                 </tr>

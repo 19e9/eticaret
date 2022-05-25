@@ -6,6 +6,12 @@
 
 @section('content')
 
+<div class="py-3 mb-4 shadow-sm bg-warning border-top">
+    <div class="container">
+        <h6 class="mb-0"> Koleksiyonlar / {{ $category->name}} </h6>
+    </div>
+</div>
+
 <div class="py-5">
     <div class="container">
         <div class="row">
@@ -13,7 +19,7 @@
             @foreach ($products as $prod)
                 <div class="col-md-3 mb-3">
                     <div class="card">
-                        <a href="{{ url('view-category/'.$category->slug.'/'.$prod->slug) }}">
+                        <a href="{{ url('category/'.$category->slug.'/'.$prod->slug) }}">
                         <img src="{{ asset('assets/uploads/products/'.$prod->image) }}" alt="Product image" width="280" height="400">
                             <div class="card-body">
                                 <h5>{{  $prod->name }}</h5>
