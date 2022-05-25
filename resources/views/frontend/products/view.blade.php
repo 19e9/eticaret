@@ -74,8 +74,8 @@
                               </h2>
 
                               <hr>
-                              <label class="me-3">Orijinal Fiyat:<s> ₺ {{ $products->original_price}}</s></label>
-                              <label class="fw-bold">İndirim Fiyat: ₺ {{ $products->selling_price}}</label>
+                              <label class="me-3">Orijinal Fiyat:<s> {{ $products->original_price}} ₺</s></label>
+                              <label class="fw-bold">İndirim Fiyat: {{ $products->selling_price}} ₺</label>
                                 @php $ratenum = number_format($rating_value) @endphp
                               <div class="raeting">
                                     @for($i = 1; $i <= $ratenum; $i++)

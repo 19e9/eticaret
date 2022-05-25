@@ -10,22 +10,22 @@
             <div class="col-md-12">
                 <div class="card">
                     <div class="card-header">
-                        <h4>Siparişlerim Göster
+                        <h4>Sipariş Faturası
                             <a href="{{ url('my-order') }}" class="btn-warning float-end">Geri Dön</a>
                         </h4>
                     </div>
                     <div class="card-body">
                         <div class="row">
                             <col class="md-6 order-details">
-                            <h4>Sepet Detayıları</h4>
+                            <h5>Adres Detayıları</h5>
                             <hr>
-                            <label for="">Ad</label>
+                            <label for="">Ad :</label>
                             <div class="boder p-2">{{ $orders->fname }}</div>
-                            <label for="">Soyad</label>
+                            <label for="">Soyad :</label>
                             <div class="boder p-2">{{ $orders->lname }}</div>
-                            <label for="">E-posta</label>
+                            <label for="">E-posta :</label>
                             <div class="boder p-2">{{ $orders->email }}</div>
-                            <label for="">Cep Telefon No:</label>
+                            <label for="">Cep Telefon No :</label>
                             <div class="boder p-2">{{ $orders->phone }}</div>
                             <label for="">Sipariş Adresi</label>
                             <div class="boder p-2">
@@ -35,7 +35,7 @@
                                 {{ $orders->addres1 }},
                                 {{ $orders->addres2 }},
                             </div>
-                            <label for="">Posta Kodu</label>
+                            <label for="">Posta Kodu :</label>
                             <div class="boder">{{ $orders->zipcode }}</div>
                         </div>
                         <br>
@@ -64,7 +64,7 @@
                                     @endforeach
                                 </tbody>
                             </table>
-                            <h4 class="px-2">Toplam : <span class="float-end">{{ $orders->total_price }}</span></h4>
+                            <h4 class="px-2">Toplam : <span class="float-end">{{ $orders->total_price }} ₺</span></h4>
                         </div>
 
                     </div>

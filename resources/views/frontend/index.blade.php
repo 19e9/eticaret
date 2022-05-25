@@ -18,8 +18,8 @@
                                 <img src="{{ asset('assets/uploads/products/'.$prod->image) }}" alt="Ürün Resimi">
                                 <div class="card-body">
                                     <h5>{{  $prod->name }}</h5>
-                                    <span class="float-start">{{   $prod->original_price }}</span>
-                                    <span class="float-end"> <s> {{   $prod->selling_price }}</s></span>
+                                    <span class="float-start">{{   $prod->original_price }} ₺</span>
+                                    <span class="float-end"> <s> {{   $prod->selling_price }} ₺</s></span>
                                 </div>
                             </div>
                             </a>
