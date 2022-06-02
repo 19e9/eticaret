@@ -71,7 +71,7 @@
                         <img src="{{ asset('assets/uploads/products/'.$products->image) }}" class="cate-image" alt="">
                     @endif
                     <div class="col-md-12">
-                        <input type="file" name="image" required class="form-control">
+                        <input type="file" name="image" class="form-control">
                     </div>
                     <div class="col-md-12">
                         <button type="submit" class="btn btn-primary">Güncelle</button>
