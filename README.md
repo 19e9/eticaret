@@ -76,3 +76,8 @@ step : After completing this process, go to the file and open your shell and wri
 php artısan serve
 
 step : Enter your browser and write a localhost:8000
+
+
+https://e-ticare.000webhostapp.com/
+
+
