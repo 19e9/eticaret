@@ -62,3 +62,17 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+
+## Run 
+
+step : The first step is to update the composer file to the latest update 
+
+// composer update in xampp shell
+
+step : The second step is to create a database with this name: eticaret
+And import the sql file
+
+step : After completing this process, go to the file and open your shell and write the following line:
+php artısan serve
+
+step : Enter your browser and write a localhost:8000
